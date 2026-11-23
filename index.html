@@ -11,87 +11,140 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:title" content="LUT Cam">
 <meta property="og:description" content="Unprocessed. Then film. A camera for iPhone that skips Apple's processing.">
-<meta property="og:image" content="assets/film.jpg">
+<meta property="og:image" content="assets/films/portra-400.jpg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
 
+<div class="wrap">
 <header class="bar">
   <a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="36" height="36">LUT Cam</a>
-  <nav><a href="#how">How it works</a><a href="help.html">Help</a><a href="privacy-policy.html">Privacy</a></nav>
+  <nav><a href="#how">How it works</a><a href="looks.html">Films</a><a href="help.html">Help</a><a href="privacy-policy.html">Privacy</a></nav>
 </header>
+</div>
 
 <main>
-<div class="hero">
-  <img class="icon" src="assets/icon.png" alt="LUT Cam app icon" width="112" height="112">
-  <h1>Unprocessed.<br>Then film.</h1>
-  <p class="lead">Your iPhone sharpens, brightens and blends every photo. LUT Cam doesn't. It takes the raw sensor photo and develops it in a real film look.</p>
-  <span class="soon">Coming soon to the App Store</span>
-</div>
+<section class="hero" aria-label="LUT Cam">
+  <img class="hero-photo" src="assets/films/portra-400.jpg" alt="A building facade at dusk, developed in the Portra 400 look" width="1600" height="1200" fetchpriority="high">
+  <p class="readout mono" aria-hidden="true"><span class="rec"></span>Portra 400 · 1/450 · ƒ1.8 · ISO 25</p>
+  <div class="hero-copy">
+    <h1>Unprocessed.<br>Then film.</h1>
+    <p class="lead">Your iPhone sharpens, brightens and blends every photo. LUT Cam doesn't. It takes the raw sensor photo and develops it in a real film look.</p>
+    <span class="soon">Coming soon to the App Store</span>
+  </div>
+</section>
 
-<div class="pair" aria-label="The same photo, unprocessed and in a film look">
-  <figure>
-    <img src="assets/raw.jpg" alt="A building facade straight from the sensor, flat and unprocessed" width="800" height="626" fetchpriority="high">
-    <figcaption class="mono"><b>Unprocessed RAW</b> · straight from the sensor</figcaption>
-  </figure>
-  <figure>
-    <img src="assets/film.jpg" alt="The same facade developed in a film look with grain" width="800" height="626">
-    <figcaption class="mono"><b>Film look</b> · developed from that RAW</figcaption>
-  </figure>
-</div>
+<div class="wrap">
 
-<section id="how">
+<section class="darkroom" id="films" aria-labelledby="darkroom-title">
+  <p class="kicker mono">The darkroom</p>
+  <h2 id="darkroom-title">Pick a film. Drag to see what it did.</h2>
+  <p class="intro">Left: the sensor's own data, developed neutrally. Right: the same RAW in a film look. Every picture here comes out of LUT Cam's own engine.</p>
+
+  <figure class="compare" style="--pos: 50%">
+    <img class="compare-raw" src="assets/films/neutral.jpg" alt="The facade straight from the sensor, flat and unprocessed" width="1600" height="1200">
+    <img class="compare-film" id="compare-film" src="assets/films/portra-400.jpg" alt="The same facade in the Portra 400 look" width="1600" height="1200">
+    <span class="tag tag-raw mono">Pure · RAW</span>
+    <span class="tag tag-film mono" id="tag-film">Portra 400 · C-41</span>
+    <span class="handle" aria-hidden="true"></span>
+    <input class="slider" type="range" min="0" max="100" value="50" aria-label="Drag to compare the unprocessed RAW with the film look">
+  </figure>
+
+  <div class="shelf" role="group" aria-label="Choose a film">
+    <button class="can" type="button" aria-pressed="true" data-film="portra-400" data-name="Portra 400" data-process="C-41" data-kind="Colour" data-iso="400" data-line="Soft skin · wide latitude" style="--can: #f29921"><img src="assets/cans/portra.png" alt="" width="140" height="240"><span class="mono">Portra</span></button>
+    <button class="can" type="button" aria-pressed="false" data-film="gold-200" data-name="Gold 200" data-process="C-41" data-kind="Colour" data-iso="200" data-line="Warm everyday colour" style="--can: #fac71a"><img src="assets/cans/gold.png" alt="" width="140" height="240"><span class="mono">Gold</span></button>
+    <button class="can" type="button" aria-pressed="false" data-film="ektar-100" data-name="Ektar 100" data-process="C-41" data-kind="Colour" data-iso="100" data-line="Vivid · ultra fine grain" style="--can: #ed3329"><img src="assets/cans/ektar.png" alt="" width="140" height="240"><span class="mono">Ektar</span></button>
+    <button class="can" type="button" aria-pressed="false" data-film="superia-400" data-name="Superia 400" data-process="C-41" data-kind="Colour" data-iso="400" data-line="Fuji greens · cool shadows" style="--can: #299e52"><img src="assets/cans/superia.png" alt="" width="140" height="240"><span class="mono">Superia</span></button>
+    <button class="can" type="button" aria-pressed="false" data-film="vision3-500t" data-name="Vision3 500T" data-process="ECN-2" data-kind="Cine" data-iso="500" data-line="Tungsten · motion picture" style="--can: #385ccc"><img src="assets/cans/vision.png" alt="" width="140" height="240"><span class="mono">500T</span></button>
+    <button class="can" type="button" aria-pressed="false" data-film="velvia-100" data-name="Velvia 100" data-process="E-6" data-kind="Slide" data-iso="100" data-line="Slide · deep saturated colour" style="--can: #8c2e80"><img src="assets/cans/velvia.png" alt="" width="140" height="240"><span class="mono">Velvia</span></button>
+    <button class="can" type="button" aria-pressed="false" data-film="kodachrome-64" data-name="Kodachrome 64" data-process="K-14" data-kind="Slide" data-iso="64" data-line="Slide · the classic" style="--can: #fadb4d"><img src="assets/cans/kodachrome.png" alt="" width="140" height="240"><span class="mono">Kodachrome</span></button>
+    <button class="can" type="button" aria-pressed="false" data-film="double-x-250" data-name="Double-X 250" data-process="D-96" data-kind="B&amp;W" data-iso="250" data-line="Black and white · cinema" style="--can: #9a9a9a"><img src="assets/cans/doublex.png" alt="" width="140" height="240"><span class="mono">Double-X</span></button>
+  </div>
+
+  <dl class="captions mono" aria-live="polite">
+    <div><dt>Film</dt><dd id="cap-name">Portra 400</dd></div>
+    <div><dt>Process</dt><dd id="cap-process">C-41 · Colour · ISO 400</dd></div>
+    <div><dt>Character</dt><dd id="cap-line">Soft skin · wide latitude</dd></div>
+    <div><dt>Sample RAW</dt><dd>iPhone XS · 1/450 · ƒ1.8 · ISO 25</dd></div>
+  </dl>
+  <p class="more"><a href="looks.html">See every film side by side →</a></p>
+</section>
+
+<section id="how" aria-labelledby="how-title">
   <p class="kicker mono">How it works</p>
-  <h2>A camera that leaves the photo alone.</h2>
+  <h2 id="how-title">A camera that leaves the photo alone.</h2>
   <p class="intro">No HDR, no sharpening, only light noise reduction when it gets dark. LUT Cam keeps the sensor's own data, develops it neutrally, then gives it a film look from a physical model of film and print.</p>
 
-  <div class="screens">
-    <figure>
-      <img src="assets/camera.jpg" alt="The LUT Cam camera screen" width="520" height="1118" loading="lazy">
-      <h3>Shoot unprocessed</h3>
-      <p>A calm camera: lens, exposure, shutter. Every photo is a true RAW.</p>
-    </figure>
-    <figure>
-      <img src="assets/looks.jpg" alt="Choosing a film look on the camera" width="520" height="1118" loading="lazy">
-      <h3>Pick a film</h3>
-      <p>Swipe through film looks built from real film science, not filters.</p>
-    </figure>
-    <figure>
-      <img src="assets/editor.jpg" alt="Changing the look of a photo after it was taken" width="520" height="1118" loading="lazy">
-      <h3>Change it later</h3>
-      <p>Every photo develops again from its RAW. Change the film, the strength or the grain any time.</p>
-    </figure>
+  <ol class="chapters">
+    <li class="chapter">
+      <div class="chapter-text">
+        <span class="num mono">01</span>
+        <h3>Shoot unprocessed</h3>
+        <p>A calm camera: lens, exposure, shutter. Every photo is a true RAW.</p>
+        <p class="spec mono">SS · EV · ISO · DNG</p>
+      </div>
+      <div class="stage"><img src="assets/camera.jpg" alt="The LUT Cam camera screen" width="520" height="1118" loading="lazy"></div>
+    </li>
+    <li class="chapter">
+      <div class="chapter-text">
+        <span class="num mono">02</span>
+        <h3>Pick a film</h3>
+        <p>Swipe through film looks built from real film science, not filters. The look is live in the viewfinder, so the photo looks like what you saw.</p>
+        <p class="spec mono">8 films · Pure</p>
+      </div>
+      <div class="stage"><img src="assets/looks.jpg" alt="Choosing a film look on the camera" width="520" height="1118" loading="lazy"></div>
+    </li>
+    <li class="chapter">
+      <div class="chapter-text">
+        <span class="num mono">03</span>
+        <h3>Change it later</h3>
+        <p>Every photo develops again from its RAW. Change the film, the strength or the grain any time.</p>
+        <p class="spec mono">RAW kept · nothing lost</p>
+      </div>
+      <div class="stage"><img src="assets/editor.jpg" alt="Changing the look of a photo after it was taken" width="520" height="1118" loading="lazy"></div>
+    </li>
+  </ol>
+</section>
+
+<section class="proof" aria-labelledby="proof-title">
+  <p class="kicker mono">The one people ask for</p>
+  <h2 id="proof-title">Change the film after the shot.</h2>
+  <p>Every photo keeps its RAW. Swipe to another film tomorrow or next year: it develops again from the sensor data, and nothing is lost.</p>
+</section>
+
+<section class="facts" aria-label="Details">
+  <div class="fact"><span class="mono">RAW</span><h3>The RAW stays with you</h3><p>Every photo you take keeps its unprocessed DNG beside it in your library.</p></div>
+  <div class="fact"><span class="mono">Light</span><h3>Made for harsh light</h3><p>On high-contrast days a film-like curve holds the sky and the shadows.</p></div>
+  <div class="fact"><span class="mono">Log</span><h3>For colourists</h3><p>Export an Apple Log file and grade it yourself in DaVinci Resolve.</p></div>
+  <div class="fact"><span class="mono">Private</span><h3>Nothing leaves your phone</h3><p>No account, no ads, no tracking. No shot limits, no watermark.</p></div>
+</section>
+
+<section class="pair-text">
+  <div class="text">
+    <p class="kicker mono">Help</p>
+    <h2>Questions?</h2>
+    <p>Where the RAW file is, how to change a look later, how to grade in DaVinci Resolve and how to restore a purchase: <a href="help.html">read the help page</a>.</p>
   </div>
-
-  <div class="facts">
-    <div class="fact"><h3>The RAW stays with you</h3><p>Every photo you take keeps its unprocessed DNG beside it in your library.</p></div>
-    <div class="fact"><h3>Made for harsh light</h3><p>On high-contrast days a film-like curve holds the sky and the shadows.</p></div>
-    <div class="fact"><h3>For colourists</h3><p>Export an Apple Log file and grade it yourself in DaVinci Resolve.</p></div>
-    <div class="fact"><h3>Nothing leaves your phone</h3><p>No account, no ads, no tracking. No shot limits, no watermark.</p></div>
+  <div class="text">
+    <p class="kicker mono">Privacy</p>
+    <h2>LUT Cam collects nothing.</h2>
+    <p>There is no account, no server, no analytics, no ads and no tracking. We never see your photos or anything about you. <a href="privacy-policy.html">Full privacy policy</a>.</p>
   </div>
 </section>
+</div>
 
-<section id="help" class="text">
-  <p class="kicker mono">Help</p>
-  <h2>Questions?</h2>
-  <p>Where the RAW file is, how to change a look later, how to grade in DaVinci Resolve and how to restore a purchase: <a href="help.html">read the help page</a>.</p>
-</section>
-
-<section id="privacy" class="text">
-  <p class="kicker mono">Privacy</p>
-  <h2>LUT Cam collects nothing.</h2>
-  <p>There is no account, no server, no analytics, no ads and no tracking. We never see your photos or anything about you. <a href="privacy-policy.html">Full privacy policy</a>.</p>
-</section>
+<div class="band" aria-hidden="true"><span>Unprocessed.</span><span>Then film.</span></div>
 </main>
 
+<div class="wrap">
 <footer>
   <div class="row">
     <span>© 2026 Damian Lüscher</span>
-    <span><a href="help.html">Help</a> · <a href="privacy-policy.html">Privacy policy</a> · Film looks from the open-source spektrafilm project</span>
+    <span><a href="looks.html">Films</a> · <a href="help.html">Help</a> · <a href="privacy-policy.html">Privacy policy</a> · Film looks from the open-source spektrafilm project</span>
   </div>
 </footer>
-
 </div>
+
+<script src="darkroom.js"></script>
 </body>
 </html>
