@@ -27,7 +27,7 @@ header.bar { display: flex; align-items: center; justify-content: space-between;
 .brand { display: flex; align-items: center; gap: 12px; font-weight: 600; text-decoration: none; }
 .brand img { width: 36px; height: 36px; }
 nav a { color: var(--muted); text-decoration: none; margin-left: 24px; font-size: 15px; }
-nav a:hover { color: var(--text); }
+nav a:hover, nav a[aria-current="page"] { color: var(--text); }
 
 /* hero */
 .hero { text-align: center; padding: clamp(40px, 8vw, 96px) 0 clamp(32px, 5vw, 56px); }
@@ -87,7 +87,8 @@ footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; ga
 footer a { color: var(--muted); }
 
 @media (max-width: 760px) {
-  nav a:not(:last-child) { display: none; }
+  nav a:first-child { display: none; }
+  nav a { margin-left: 18px; }
   .screens { grid-template-columns: 1fr; max-width: 360px; margin-inline: auto; }
   .facts { grid-template-columns: 1fr; }
 }
@@ -103,4 +104,6 @@ footer a { color: var(--muted); }
 .page strong { color: var(--text); }
 .page ul { padding-left: 1.2em; }
 .page li { margin: 8px 0; }
+.page h3 { font-size: 19px; margin: 28px 0 6px; }
+.page .lead-in { color: var(--muted); font-size: 19px; margin: 0 0 8px; }
 .date { color: var(--muted); font-size: 13px; text-transform: uppercase; }
